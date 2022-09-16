@@ -1,0 +1,58 @@
+{% extends 'eStockZone/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block content_style %}
+<link href="{% static 'eStockZone/css/home.css' %}" type="text/css" rel="stylesheet"/>
+{% endblock content_style %}
+{% block main_content %}
+{% include 'eStockZone/nav.html' %}
+<div id="main" style="height: auto;width: 100%;">
+  <p class="para">Welcome to eStock world.</p>	
+  <p class="para">We believe anyone can invest and grow. At eStock, there are lots of stocks and its performance are available.</p>
+    <div id="form-content">
+      <div class="form-content1"><select id="select-stock">
+        <option value="Choose stock" selected="selected">Choose stock</option>
+        {% for stock in stock_name %}
+        <option value="{{stock}}">{{stock}}</option>
+        {% endfor %}
+      </select></div>
+      <div class="form-content1">From Date: <input type="text" class="datepicker" id="fromDate"></div><div class="form-content1"> To Date: <input type="text" class="datepicker" id="toDate"></div>
+      <div class="form-content1"><input type="submit" name="Search" value="Search" id="btn"></div>
+    </div>
+  <div id="result">
+    <p>The {{stockname | safe }} stock details shown in below:</p>
+    {{data | safe}}
+  </div>
+</div>
+<script type="text/javascript" src="{% static 'eStockZone/js/proper.js' %}"></script>
+<script type="text/javascript" src="{% static 'eStockZone/js/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'eStockZone/js/main.js' %}"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+<style type="text/css">
+	body{
+		background-color: lightgray;
+	}
+</style>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var today = new Date();
+        $('.datepicker').datepicker({
+            format: 'yyyy-mm-dd',
+            autoclose:true,
+            endDate: "today",
+            maxDate: today
+        }).on('changeDate', function (ev) {
+                $(this).datepicker('hide');
+            });
+
+
+        $('.datepicker').keyup(function () {
+            if (this.value.match(/[^0-9]/g)) {
+                this.value = this.value.replace(/[^0-9^-]/g, '');
+            }
+        });
+    });
+</script>
+{% endblock main_content %}

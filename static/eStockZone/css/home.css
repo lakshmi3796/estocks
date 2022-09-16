@@ -1,0 +1,11 @@
+.para{
+    margin:20px;
+}
+#formBtn{
+    height:200px;
+    width:400px;
+    margin: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: lightcyan;
+}

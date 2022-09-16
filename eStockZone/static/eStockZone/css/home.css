@@ -1,0 +1,48 @@
+.para{
+    margin:20px;
+}
+#form-content{
+    height:60px;
+    width:80%;
+    margin: 20px;
+    padding: 5px 10px 0px 10px;
+    border-radius: 10px;
+    background-color: lightcyan;
+}
+.form-content1{
+    float:left;
+    margin: 10px;
+}
+.datepicker{
+    border-radius: 5px;
+}
+#btn{
+    border-radius: 5px;
+    color: blue;
+    background-color: white;
+}
+#select-stock{
+    border-radius: 5px;
+}
+#btn:hover{
+    color: white;
+    background-color: blue;
+}
+#result{
+    width: 70%;
+    margin-left: 145px;
+    padding: 40px;
+
+}
+.footer{
+    padding: 20px;
+}
+.icon{
+    border-radius: 50%;
+    padding-left: 5px;
+}
+.fg{
+    float:left;
+    width: 50%;
+    padding: 10px;
+}
